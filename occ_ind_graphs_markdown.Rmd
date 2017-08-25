@@ -1,0 +1,55 @@
+---
+title: "occ_ind_graphs"
+author: "Kelsey Pukelis"
+date: "August 25, 2017"
+output: pdf_document
+---
+
+```{r echo=FALSE}
+library(knitr)
+setwd(dir = "C:/Users/kbp2w/Documents/GitHub/occ_ind")
+read_chunk('occ_ind_graphs.R')
+```
+```{r setup, echo=FALSE}
+```
+## Including flagged data
+```{r plots_withflags, echo=TRUE}
+```
+## Excluding flagged data
+```{r plots_withflags, echo=TRUE}
+```
+
+## {r setup, include=FALSE}
+## knitr::opts_chunk$set(echo = TRUE)
+
+
+## {r cars, echo=FALSE}
+## summary(cars)
+
+
+## {r pressure, echo=FALSE}
+## plot(pressure)
+
+
+
+
+## Including flagged data
+```{r echo=FALSE}
+  plot_full_density(data = ind, dataname = "ind",includeflags = TRUE)
+  plot_full_density(data = occ, dataname = "occ",includeflags = TRUE)
+  plot_full_density(data = ind_occ, dataname = "ind_occ",includeflags = TRUE)
+  
+  plot_partial_density(data = ind, dataname = "ind", includeflags = TRUE)
+  plot_partial_density(data = occ, dataname = "occ",includeflags = TRUE)
+  plot_partial_density(data = ind_occ, dataname = "ind_occ",includeflags = TRUE)
+```
+## Excluding flagged data
+```{r echo=FALSE}
+  plot_full_density(data = ind, dataname = "ind",includeflags = FALSE)
+  plot_full_density(data = occ, dataname = "occ",includeflags = FALSE)
+  plot_full_density(data = ind_occ, dataname = "ind_occ",includeflags = FALSE)
+
+  plot_partial_density(data = ind, dataname = "ind", includeflags = FALSE)
+  plot_partial_density(data = occ, dataname = "occ",includeflags = FALSE)
+  plot_partial_density(data = ind_occ, dataname = "ind_occ",includeflags = FALSE)
+```
