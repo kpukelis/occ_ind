@@ -18,38 +18,6 @@ read_chunk('occ_ind_graphs.R')
 ## Excluding flagged data
 ```{r plots_withflags, echo=TRUE}
 ```
-
-## {r setup, include=FALSE}
-## knitr::opts_chunk$set(echo = TRUE)
-
-
-## {r cars, echo=FALSE}
-## summary(cars)
-
-
-## {r pressure, echo=FALSE}
-## plot(pressure)
-
-
-
-
-## Including flagged data
-```{r echo=FALSE}
-  plot_full_density(data = ind, dataname = "ind",includeflags = TRUE)
-  plot_full_density(data = occ, dataname = "occ",includeflags = TRUE)
-  plot_full_density(data = ind_occ, dataname = "ind_occ",includeflags = TRUE)
-  
-  plot_partial_density(data = ind, dataname = "ind", includeflags = TRUE)
-  plot_partial_density(data = occ, dataname = "occ",includeflags = TRUE)
-  plot_partial_density(data = ind_occ, dataname = "ind_occ",includeflags = TRUE)
-```
-## Excluding flagged data
-```{r echo=FALSE}
-  plot_full_density(data = ind, dataname = "ind",includeflags = FALSE)
-  plot_full_density(data = occ, dataname = "occ",includeflags = FALSE)
-  plot_full_density(data = ind_occ, dataname = "ind_occ",includeflags = FALSE)
-
-  plot_partial_density(data = ind, dataname = "ind", includeflags = FALSE)
-  plot_partial_density(data = occ, dataname = "occ",includeflags = FALSE)
-  plot_partial_density(data = ind_occ, dataname = "ind_occ",includeflags = FALSE)
+## Basic stats
+```{r stats, echo=TRUE}
 ```
