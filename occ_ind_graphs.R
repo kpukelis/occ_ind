@@ -3,16 +3,12 @@
   library(foreign)
   library(ggplot2)
 
-# Set extract number
-  extract_num <- 2
+# Set working directory
+  setwd(dir = "/Users/kbp2w/Box Sync/Adam/Occupation & Industry Stats/data/clean/Extract 3")
   
 # Set graph parameters
   xlow <- 0
   xhigh <- 500
-
-# Set working directory
-  #setwd(dir = paste("/Users/kbp2w/Box Sync/Adam/Occupation & Industry Stats/data/clean/Extract ", extract_num))
-  setwd(dir = "/Users/kbp2w/Box Sync/Adam/Occupation & Industry Stats/data/clean/Extract 2")
 
 # Read Stata data into R
   ind <- read.dta(file = "ind_v12.dta")
@@ -48,6 +44,7 @@
     }
 
 # Plot all plots
+
 ## @knitr plots_noflags
   plot_full_density(data = ind, dataname = "ind",includeflags = FALSE)
   plot_full_density(data = occ, dataname = "occ",includeflags = FALSE)
@@ -56,6 +53,7 @@
   plot_partial_density(data = ind, dataname = "ind", includeflags = FALSE)
   plot_partial_density(data = occ, dataname = "occ",includeflags = FALSE)
   plot_partial_density(data = ind_occ, dataname = "ind_occ",includeflags = FALSE)
+
 ## @knitr plots_withflags
   plot_full_density(data = ind, dataname = "ind",includeflags = TRUE)
   plot_full_density(data = occ, dataname = "occ",includeflags = TRUE)

@@ -1,7 +1,7 @@
-local extract_num 	= 2
+local extract_num 	= 3
 local data_levels 	  ind occ
 local yr_start		= 2010
-local yr_end		= 2010
+local yr_end		= 2015
 
 // directories
 	global dir_root "C:\Users\kbp2w\Box Sync\Adam\Occupation & Industry Stats\"
@@ -10,6 +10,9 @@ local yr_end		= 2010
 
 // create base dataset
 	use "${dir_raw}\usa_0000`extract_num'.dta", clear
+
+	//use data for years `yr_start' - `yr_end' (note: data is pooled across years)
+	keep if year>=`yr_start' & year<=`yr_end'
 
 	// employment status, if in the labor force 
 		recode empstat (0=.) (1=1) (2=0) (3=.), gen(xempstat_iflabforce)
