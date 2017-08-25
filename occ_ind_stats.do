@@ -50,6 +50,7 @@ local yr_end		= 2010
 		label var num_labforce		"Total number of workers in `data_level' in the labor force"
 	
 		save "${dir_clean}\\`data_level'.dta", replace
+		saveold "${dir_clean}\\`data_level'_v12.dta", version(12) replace
 	}
 
 // create industry-occupation level dataset
@@ -67,13 +68,6 @@ local yr_end		= 2010
 		label var perc_unemployed	"Percentage of workers UNEMPLOYED in ind occ"
 		label var num_labforce		"Total number of workers in ind occ in the labor force"
 	
-		save "${dir_clean}\ind occ.dta", replace
+		save "${dir_clean}\ind_occ.dta", replace
+		saveold "${dir_clean}\ind_occ_v12.dta", version(12) replace
 
-	
-//create histograms
-use "${dir_clean}\ind.dta", clear
-
-histogram num_labforce, width(2000) start(0) density
-
-histogram num_labforce, width(200) start(0) density
-histogram num_labforce, width(20) start(0) density
