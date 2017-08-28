@@ -2,6 +2,8 @@ local extract_num 	= 3
 local data_levels 	  ind occ
 local yr_start		= 2010
 local yr_end		= 2015
+local indcodelength = 3
+local occcodelength = 3
 
 // directories
 	global dir_root "C:\Users\kbp2w\Box Sync\Adam\Occupation & Industry Stats\"
@@ -76,6 +78,12 @@ local yr_end		= 2015
 // create industry-occupation level dataset
 		use "`base'", clear
 		keep ind occ xempstat_iflabforce* xlabforce*
+		
+		tostring ind occ, replace
+		replace ind = substr(ind,1,`indcodelength')
+		replace occ = substr(occ,1,`occcodelength')
+		destring ind occ, replace
+		
 		collapse (mean) xempstat_iflabforce* (sum) xlabforce*, by(ind occ)
 	
 		rename xempstat_iflabforce			perc_employed
