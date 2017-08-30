@@ -80,9 +80,15 @@ local occcodelength = 3
 		keep ind occ xempstat_iflabforce* xlabforce*
 		
 		tostring ind occ, replace
+		//make strings of uniform length 4
+		foreach var in ind occ {
+			replace `var' = "000" + `var' if strlen(`var')==1
+			replace `var' = "00"  + `var' if strlen(`var')==2
+			replace `var' = "0"   + `var' if strlen(`var')==3
+		}
 		replace ind = substr(ind,1,`indcodelength')
 		replace occ = substr(occ,1,`occcodelength')
-		destring ind occ, replace
+		*destring ind occ, replace
 		
 		collapse (mean) xempstat_iflabforce* (sum) xlabforce*, by(ind occ)
 	
