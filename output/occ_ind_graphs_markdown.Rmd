@@ -1,23 +1,28 @@
 ---
-title: "occ_ind_graphs"
+title: "occ_ind_tables"
 author: "Kelsey Pukelis"
-date: "August 28, 2017"
+date: "September 1, 2017"
 output: pdf_document
 ---
 
 ```{r echo=FALSE}
 library(knitr)
-setwd(dir = "C:/Users/kbp2w/Documents/GitHub/occ_ind")
+setwd(dir = "C:/Users/kbp2w/Box Sync/Adam/Occupation & Industry Stats/code/occ_ind/output")
 read_chunk('occ_ind_graphs.R')
 ```
 ```{r setup, echo=FALSE}
 ```
+
+```{r plots_withflags, echo=FALSE}
+```
+
+```{r plots_noflags, echo=FALSE}
+```
 ## Including flagged data
-```{r plots_withflags, echo=TRUE}
+```{r table_withflags, echo=TRUE}
 ```
+
+
 ## Excluding flagged data
-```{r plots_withflags, echo=TRUE}
-```
-## Basic stats
-```{r stats, echo=TRUE}
+```{r table_noflags, echo=TRUE}
 ```

@@ -15,7 +15,7 @@
 // switches
 	local switch_install 		= 0
 	local switch_build_base 	= 0
-	local switch_build_occ_ind 	= 1
+	local switch_build_occ_ind 	= 0
 	local switch_build_occind 	= 1
 	local switch_output_rmd		= 0
 	
