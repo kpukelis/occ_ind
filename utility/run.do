@@ -7,17 +7,18 @@
 	set more off		
 
 // directories
-	global dir_root "C:/Users/kbp2w/Box Sync/Adam/Occupation & Industry Stats"
+	global dir_root "C:/Users/kbp2w/Box Sync/Adam/occupation_industry_stats"
 	global dir_raw "${dir_root}/data/raw/"
 	global dir_clean "${dir_root}/data/clean/"
 	global dir_output "${dir_root}/output/"
 
 // switches
-	local switch_install 		= 0
-	local switch_build_base 	= 0
-	local switch_build_occ_ind 	= 0
-	local switch_build_occind 	= 1
-	local switch_output_rmd		= 0
+	local switch_install 			= 0
+	local switch_build_base 		= 0
+	local switch_build_occ_ind 		= 0
+	local switch_build_occind 		= 0
+	local switch_occ_ind_binsize	= 1
+	local switch_output_rmd			= 0
 	
 ***********************************************
 
@@ -30,7 +31,8 @@
 	foreach step in 
 		build_base 
 		build_occ_ind
-		build_occind  
+		build_occind
+		occ_ind_binsize  
 		{ ;
 			if `switch_`step'' { ;
 				do "${dir_root}/code/occ_ind/build//`step'" ;
